@@ -1,86 +1,71 @@
-# AI Face Gender Recognition
+# Gender Detection Using Machine Learning
 
 ## Overview
 
-AI Face Gender Recognition is a Machine Learning and Deep Learning project that detects a person's gender (Male or Female) from facial images using Python, OpenCV, TensorFlow, and Keras.
+This project predicts gender (Male or Female) based on a person's name using Machine Learning and Flask.
 
-The system uses a trained Convolutional Neural Network (CNN) model to classify faces captured from images or a webcam in real time.
+The model is trained using a CSV dataset containing names and their corresponding genders. When a user enters a name through the web interface, the trained model predicts whether the name belongs to a Male or Female.
 
 ---
 
 ## Features
 
-* Face detection using OpenCV Haar Cascade
-* Gender classification (Male/Female)
-* Real-time webcam prediction
-* Deep Learning based CNN model
-* Easy-to-use Python implementation
-* High accuracy with sufficient training data
+* Gender prediction using names
+* Machine Learning Classification Model
+* Flask Web Application
+* Simple User Interface
+* CSV Dataset Based Training
+* Fast and Easy Prediction
 
 ---
 
 ## Technologies Used
 
 * Python
-* OpenCV
-* TensorFlow
-* Keras
-* NumPy
-* Matplotlib
+* Flask
+* Pandas
 * Scikit-learn
+* Pickle
+* HTML/CSS
 
 ---
 
 ## Project Structure
 
-AI-Face-Gender-Recognition/
+Gender-Detection/
 
-├── dataset/
+├── app.py
 
-│ ├── male/
+├── train_model.py
 
-│ └── female/
+├── gender_data.csv
 
-├── train.py
-
-├── predict.py
-
-├── gender_model.h5
-
-├── haarcascade_frontalface_default.xml
+├── model.pkl
 
 ├── requirements.txt
 
-└── README.md
+└── templates/
+
+  └── index.html
 
 ---
 
 ## Dataset
 
-The dataset contains facial images divided into two categories:
+Sample Dataset:
 
-* Male
-* Female
-
-Example:
-
-dataset/
-
-├── male/
-
-│ ├── male1.jpg
-
-│ ├── male2.jpg
-
-│ └── ...
-
-└── female/
-
-├── female1.jpg
-
-├── female2.jpg
-
-└── ...
+| ID | Name   | Gender |
+| -- | ------ | ------ |
+| 1  | Karan  | Male   |
+| 2  | Sneha  | Female |
+| 3  | Rahul  | Male   |
+| 4  | Priya  | Female |
+| 5  | Arjun  | Male   |
+| 6  | Kavya  | Female |
+| 7  | Rohit  | Male   |
+| 8  | Anjali | Female |
+| 9  | Vijay  | Male   |
+| 10 | Divya  | Female |
 
 ---
 
@@ -89,25 +74,11 @@ dataset/
 ### Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/AI-Face-Gender-Recognition.git
-cd AI-Face-Gender-Recognition
+git clone https://github.com/navya131/Gender-Detection.git
+cd Gender-Detection
 ```
 
-### Create Virtual Environment
-
-```bash
-python -m venv venv
-```
-
-### Activate Environment
-
-Windows:
-
-```bash
-venv\Scripts\activate
-```
-
-### Install Dependencies
+### Install Required Libraries
 
 ```bash
 pip install -r requirements.txt
@@ -115,54 +86,78 @@ pip install -r requirements.txt
 
 ---
 
-## Training the Model
+## Train the Model
 
 Run:
 
 ```bash
-python train.py
+python train_model.py
 ```
 
-After successful training, the model file will be saved as:
+This creates:
 
 ```text
-gender_model.h5
+model.pkl
 ```
 
 ---
 
-## Running Gender Detection
-
-Run:
+## Run Flask Application
 
 ```bash
-python predict.py
+python app.py
 ```
 
-The webcam will open and display the predicted gender of detected faces.
+Open browser:
 
-Press **Q** to exit.
+```text
+http://127.0.0.1:5000
+```
 
 ---
 
-## Expected Output
+## Working
 
-* Detect face from webcam
-* Predict gender as:
+1. User enters a name.
+2. Flask sends the name to the trained ML model.
+3. The model predicts the gender.
+4. Result is displayed on the webpage.
 
-  * Male
-  * Female
-* Display result on screen in real time
+Example:
+
+Input:
+
+```text
+Sneha
+```
+
+Output:
+
+```text
+Predicted Gender: Female
+```
+
+Input:
+
+```text
+Rahul
+```
+
+Output:
+
+```text
+Predicted Gender: Male
+```
 
 ---
 
 ## Future Enhancements
 
-* Age prediction
-* Emotion detection
-* Multiple face recognition
-* Web application using Flask
-* Improved accuracy with larger datasets
+* Larger Dataset
+* Improved Accuracy
+* Multiple Language Support
+* API Integration
+* Deployment on Render/Heroku
 
 ---
 
@@ -170,5 +165,4 @@ Press **Q** to exit.
 
 Navya Botla
 
-Machine Learning & Artificial Intelligence Project
-
+Machine Learning Project – Gender Detection Using Names
