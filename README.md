@@ -148,6 +148,7 @@ Output:
 ```text
 Predicted Gender: Male
 ```
+<img width="1920" height="1008" alt="Screenshot 2026-06-11 222437" src="https://github.com/user-attachments/assets/774d9377-4b54-4c87-81a6-a0ba8d629b61" />
 
 ---
 
